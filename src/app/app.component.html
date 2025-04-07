@@ -1,2 +1,9 @@
-<h1>Hello world!</h1>
+<div class="flex flex-col min-h-screen relative">
+  <header class="bg-blue-950/90 text-white text-4xl text-center py-4 font-bold sticky top-0">
+    {{ storeName }}
+  </header>
+  <main class="w-full bg-gray-800 py-8 flex-1">
+    <app-food-list></app-food-list>
+  </main>
+</div>
 <router-outlet />

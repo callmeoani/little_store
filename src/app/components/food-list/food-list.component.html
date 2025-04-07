@@ -1,0 +1,10 @@
+<ul
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between w-full gap-4 px-4"
+>
+  @for(food of foods; track food.id) {
+  <!-- <li class="bg-red-300 w-full">{{ food.title }}</li> -->
+  <app-food [foodDetails]="food"></app-food>
+  } @empty {
+  <p class="text-center w-full">Sorry. Food isn't ready yet!</p>
+  }
+</ul>

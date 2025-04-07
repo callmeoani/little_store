@@ -1,0 +1,21 @@
+@let details = foodDetails();
+@let inStock = details!.quantity > 0;
+
+<li class="rounded-t-lg bg-gray-300 flex flex-col items-center ">
+  <p>img</p>
+  <div class="px-2 py-4 w-full">
+    <div class="flex justify-between items-center mb-2">
+      <p>{{ details?.title }}</p>
+      <p>{{ details?.price }}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <p>{{ inStock ? "In stock" : "Out of stock" }}</p>
+      @if(inStock){
+      <span>{{details?.quantity}}</span>
+      }
+    </div>
+    <button class="bg-green-500 text-white w-full rounded-[4px] py-2 text-xl mt-6 hover:cursor-pointer hover:shadow-md hover:font-bold transition transform duration-75 ">Add to cart</button>
+  </div>
+
+
+</li>
