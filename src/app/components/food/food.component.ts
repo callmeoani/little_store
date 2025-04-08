@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ProductType } from '../../types/productType';
+import { CartType } from '../../types/cartTypes';
 
 @Component({
   selector: 'app-food',
@@ -9,5 +10,5 @@ import { ProductType } from '../../types/productType';
 })
 export class FoodComponent {
   foodDetails = input<ProductType>();
-  
+  addedToCart = output<void>();
 }
