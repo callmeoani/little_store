@@ -1,11 +1,32 @@
 <div class="flex flex-col min-h-screen relative">
   <header
-    class="bg-blue-950/90 text-white text-4xl text-center py-4 font-bold sticky top-0"
+    class="bg-blue-950/90 text-white flex items-center justify-between py-4 font-bold sticky top-0 px-4"
   >
-    {{ storeName }}
+    <a class="text-4xl" routerLink="/">
+      {{ storeName }}
+    </a>
+    <nav>
+      <ul class="flex items-center gap-4">
+        <li>
+          <a
+            routerLink="/about-us"
+            routerLinkActive="text-green-500"
+            ariaCurrentWhenActive="page"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/faq"
+            routerLinkActive="text-green-500"
+            ariaCurrentWhenActive="page"
+            >FAQ</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
   <main class="w-full bg-gray-800 py-8 flex-1">
-    <app-food-list></app-food-list>
+    <router-outlet />
   </main>
 </div>
-<router-outlet />

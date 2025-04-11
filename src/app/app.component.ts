@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ProductType } from './types/productType';
-import { FOODS } from './data/products/products';
-import { FoodListComponent } from './components/food-list/food-list.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
+import { FaqComponent } from "./pages/faq/faq.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FoodListComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, AboutUsComponent, FaqComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [],

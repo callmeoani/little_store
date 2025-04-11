@@ -19,7 +19,7 @@ export const FOODS: ProductType[] = [
   },
   {
     id: '3',
-    title: 'Spagetti',
+    title: 'Spagetti Poyoyo',
     quantity: 4,
     price: 350,
     description:

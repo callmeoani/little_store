@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, input, model, OnInit, signal } from '@angular/core';
 import { ProductType } from '../../types/productType';
 import { FOODS } from '../../data/products/products';
 import { FoodComponent } from '../food/food.component';
@@ -13,6 +13,7 @@ import { CartType } from '../../types/cartTypes';
 export class FoodListComponent implements OnInit {
   foods: ProductType[] = [];
   cart = <CartType>{};
+  mySurname = input();
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -25,8 +26,6 @@ export class FoodListComponent implements OnInit {
     if (details.quantity > 0) {
       if (this.cart[details.id]) {
         const oldValue = this.cart[details.id];
-        console.log('the oldValue: ', oldValue);
-
         const newInput = {
           [details.id]: {
             ...oldValue,
@@ -63,4 +62,10 @@ export class FoodListComponent implements OnInit {
     }
     return total;
   }
+
+  updateField(event: KeyboardEvent): void {
+    console.log('You pressed: ', event.key);
+  }
+
+ 
 }
