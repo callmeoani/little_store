@@ -13,23 +13,9 @@
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between w-full gap-4"
   >
     @for(food of foods; track food.id) {
-    <!-- <li class="bg-red-300 w-full">{{ food.title }}</li> -->
     <app-food (addedToCart)="addToCart(food)" [foodDetails]="food"></app-food>
     } @empty {
     <p class="text-center w-full">Sorry. Food isn't ready yet!</p>
     }
   </ul>
-  @if(foods.length > 0) {
-  <button
-    class="w-full py-3 px-6 text-center text-white bg-black mt-8 rounded-lg"
-  >
-    Proceed to pay
-  </button>
-  }
-
-  <div class="mt-8 text-gray-300">
-    <p>
-      List of the cart items will be displayed here with their chosen counts
-    </p>
-  </div>
 </div>

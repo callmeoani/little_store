@@ -1,15 +1,28 @@
 @let details = foodDetails(); @let inStock = details!.quantity > 0;
 
-<li class="rounded-t-lg bg-gray-300 flex flex-col items-center">
+<li class="rounded-t-lg bg-gray-400 flex flex-col items-center">
   <!-- <p>img</p> -->
-   <img src="" alt="image of {{details?.title}}" class="h-40 w-full text-black" />
+  <img
+    ngSrc="https://th.bing.com/th/id/OIP.LjVBYFCToUWTCy1hrZBs3QHaFC?w=303&h=206&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+    width="400"
+    height="200"
+    alt="image of {{ details?.title }}"
+    priority=""
+    class="h-60 w-full text-black rounded-t-lg object-cover"
+  />
+
   <div class="px-2 py-4 w-full">
     <div class="flex justify-between items-center mb-2">
-      <p>{{ details!.title | kebabCase }}</p>
-      <p>{{ details?.price | currency:"EUR" }}</p>
+      <p>{{ details!.title }}</p>
+      <p>{{ details?.price | currency : "EUR" }}</p>
     </div>
-    <div class="flex items-center gap-2">
-      <p>{{ inStock ? "In stock" : "Out of stock" }}</p>
+    <div
+      [ngClass]="inStock ? 'inStock' : 'outOfStock'"
+      class="flex items-center gap-2 px-2 py-1 rounded-2xl bg-red-200 w-fit text-bold"
+    >
+      <p>
+        {{ inStock ? "In stock:" : "Out of stock" }}
+      </p>
       @if(inStock){
       <span>{{ details?.quantity }}</span>
       }
@@ -17,8 +30,7 @@
     @if(inStock){
     <button
       (click)="addedToCart.emit()"
-
-      class="bg-green-500 text-white w-full rounded-[4px] py-2 text-xl mt-6 hover:cursor-pointer hover:shadow-md hover:font-bold transition transform duration-75"
+      class="bg-slate-800 text-white w-full rounded-[4px] py-2 text-xl mt-6 hover:cursor-pointer hover:shadow-md hover:font-bold transition transform duration-75"
     >
       Add to cart
     </button>

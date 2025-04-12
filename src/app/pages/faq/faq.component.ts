@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-faq',
   imports: [],
   templateUrl: './faq.component.html',
-  styleUrl: './faq.component.css'
+  styleUrl: './faq.component.css',
 })
 export class FaqComponent {
-
+  title = 'Frequently Asked Questions';
 }

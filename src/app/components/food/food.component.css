@@ -1,0 +1,9 @@
+.inStock {
+  color: #016630;
+  background-color: #b9f8cf;
+}
+
+.outOfStock {
+  color: #9f0712;
+  background-color: oklch(0.885 0.062 18.334);
+}

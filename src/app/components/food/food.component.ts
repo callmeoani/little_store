@@ -1,12 +1,12 @@
 import { Component, input, output } from '@angular/core';
 import { ProductType } from '../../types/productType';
 import { CartType } from '../../types/cartTypes';
-import { CurrencyPipe } from "@angular/common";
+import { CurrencyPipe, NgClass, NgOptimizedImage } from "@angular/common";
 import { KebabCasePipe } from "../../pipes/kebab-case/kebab-case.pipe";
 
 @Component({
   selector: 'app-food',
-  imports: [CurrencyPipe, KebabCasePipe],
+  imports: [CurrencyPipe, NgClass, NgOptimizedImage],
   templateUrl: './food.component.html',
   styleUrl: './food.component.css',
 })

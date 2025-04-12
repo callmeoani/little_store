@@ -3,6 +3,7 @@ import { ProductType } from '../../types/productType';
 import { FOODS } from '../../data/products/products';
 import { FoodComponent } from '../food/food.component';
 import { CartType } from '../../types/cartTypes';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-food-list',
@@ -18,7 +19,7 @@ export class FoodListComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.foods = FOODS;
-    }, 2000);
+    }, 500);
   }
 
   addToCart(details: ProductType) {
@@ -66,6 +67,4 @@ export class FoodListComponent implements OnInit {
   updateField(event: KeyboardEvent): void {
     console.log('You pressed: ', event.key);
   }
-
- 
 }
